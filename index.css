@@ -1,5 +1,174 @@
-#heading {
-  color: brown;
-  flex: auto;
-  box-shadow: 100cap;
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #1a1a1a, #333);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.Header .logo img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.Header .logo img:hover {
+  transform: scale(1.1);
+}
+
+.Header .Nav-bar {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Header .Nav-bar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.Header .Nav-bar li {
+  margin: 0 20px;
+  position: relative;
+}
+
+.Header .Nav-bar li a {
+  text-decoration: none;
+  color: #333;
+  font-family: "Roboto", sans-serif; /* Update to your desired font */
+  font-weight: 700; /* Bold text */
+  font-size: 18px; /* Larger font size */
+  letter-spacing: 0.5px; /* Slight letter spacing */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Header .Nav-bar li a:hover {
+  color: #ff6347;
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.Header .Nav-bar li::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: #ff6347;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.Header .Nav-bar li:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Optional: Responsive design */
+@media (max-width: 768px) {
+  .Header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .Header .Nav-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .Header .Nav-bar ul {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .Header .Nav-bar li {
+    margin: 10px 0;
+  }
+
+  .Header .Nav-bar li a {
+    font-size: 20px; /* Larger font size on small screens */
+  }
+}
+
+.Body {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 200px; /* Fixed width for cards */
+  text-align: center;
+  transform: scale(1); /* Default scale */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-content h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Optional: Responsive design */
+@media (max-width: 768px) {
+  .restaurant-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
 }
